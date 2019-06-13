@@ -1,7 +1,7 @@
 #include "detours.h"
 
 #if defined(DETOURS_X64) 
-__asm__ __volatile__
+__asm__
 (R"(.intel_syntax
 .globl Trampoline_ASM_x64
 .globl trampoline_template_x64
@@ -194,10 +194,10 @@ trampoline_exit:
 ## outro signature, to automatically determine code size
 
 trampoline_data_x64:
-    .byte 78h
-    .byte 56h
-    .byte 34h
-    .byte 12h
+    .byte 0x78
+    .byte 0x56
+    .byte 0x34
+    .byte 0x12
 
 )");
 
